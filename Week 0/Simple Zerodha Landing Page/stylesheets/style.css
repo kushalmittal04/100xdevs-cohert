@@ -1,0 +1,58 @@
+.zerodha_header {
+    /* width: 80%;
+    position: fixed; */
+    background-color: #fff;
+    box-shadow: 2px 1px 2px #eee;
+    padding-left: 100px;
+    padding-right: 100px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.zerodha_subheader {
+    display: flex;
+    justify-content: space-around;
+    cursor: pointer;
+}
+
+.zerodha_header_logo {
+    padding-top: 20px;
+    height: 20px;
+    width: 120px;
+}
+
+.zerodha_header_icon {
+    color: #666;
+    padding: 20px;
+}
+
+.zerodha_content {
+    text-align: center;
+    color: #424242;
+}
+
+.zerodha_image {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+.zerodha_heading {
+    padding-bottom: 5px;
+    font-size: 45px;
+    font-weight: 600;
+}
+
+.zerodha_subheading {
+    font-size: 25px;
+    font-weight: 400;
+}
+
+.zerodha_button {
+    font-size: 20px;
+    background-color: #387ed1;
+    color: #fff;
+    padding: 10px 30px;
+    border: 1px solid rgba(0, 0, 0, 0);
+    border-radius: 3px;
+    cursor: pointer;
+}
