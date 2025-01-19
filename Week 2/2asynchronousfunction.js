@@ -1,5 +1,9 @@
 setTimeout (function(){
-    console.log("Hi there");    
+    console.log("Hi there");
+    setTimeout (function(){
+        console.log("Maam"); 
+    },1000)
+    console.log("Sir");
 },3000)
 
 let myInterval = setInterval(function(){
