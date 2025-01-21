@@ -12,6 +12,7 @@ app.get('/', (req, res) => {
 app.get('/queryparameter', (req, res) => {
     const message = req.query.message; 
     console.log(message);
+    res.status(401).send("404 Error")
 })
 
 // to access the body data
