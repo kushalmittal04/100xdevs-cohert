@@ -20,6 +20,16 @@ function calculateTime(n) {
     return t2-t1;
 }
 
+// function calculateTime(n) {
+//     let startTime = Date.now();
+//     let sum=0;
+//     for(let i=1 ; i<=n ; i++) {
+//         sum +=i;
+//     }
+//     let endTime = Date.now();
+//     return endTime-startTime;
+// }
+
 console.log(calculateTime(100));
 console.log(calculateTime(100000));
 console.log(calculateTime(1000000000));
