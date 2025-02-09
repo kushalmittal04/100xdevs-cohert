@@ -17,13 +17,36 @@ const fs = require('fs');
 const path = require('path');
 const app = express();
 
-get('/files', (req,res) => {
+// Directory containing the files
+const filesDir = path.join(__dirname, "files"); 
 
-})
+// Route to list all files
+app.get("/files", (req, res) => {
+    fs.readdir(filesDir, (err, files) => {
+        if (err) {
+            return res.status(500).json({ error: "Mocked Internal Server Error" });
+        }
+        // Send array of filenames
+        res.json(files); 
+    });
+});
 
-get('/files:filename', (req,res) => {
+// Route to get a specific file content
+app.get("/file/:filename", (req, res) => {
+    const filePath = path.join(filesDir, req.params.filename);
 
-})
+    fs.readFile(filePath, "utf8", (err, data) => {
+        if (err) {
+            return res.status(404).send("File not found");
+        }
+        // Send file content
+        res.send(data); 
+    });
+});
 
+// Catch-all route for undefined paths
+app.use((req, res) => {
+    res.status(404).send("Route not found");
+});
 
 module.exports = app;
