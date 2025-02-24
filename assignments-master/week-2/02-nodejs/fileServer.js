@@ -32,7 +32,7 @@ app.get("/files", (req, res) => {
 });
 
 // Route to get a specific file content
-app.get("/file/:filename", (req, res) => {
+app.get("/files/:filename", (req, res) => {
     const filePath = path.join(filesDir, req.params.filename);
 
     fs.readFile(filePath, "utf8", (err, data) => {
@@ -48,5 +48,7 @@ app.get("/file/:filename", (req, res) => {
 app.use((req, res) => {
     res.status(404).send("Route not found");
 });
+
+app.listen(3000);
 
 module.exports = app;

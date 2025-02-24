@@ -15,20 +15,23 @@ const fs = require('fs');
 
 const filePath = "Files/a.txt"; 
 
+const addContent = "My Name is Kushal"
+
 fs.readFile(filePath, "utf-8", (err, data) => {
     if(err) {
         console.error("Error while reading file", err);
         return;
     }
-    const cleanedData = data.replace(/\s+/g, ' ').trim();
+    cleanedData = data.replace(/\s+/g, ' ').trim();
 
-    fs.writeFile(filePath, cleanedData, "utf-8", (err) => {
+    const newData = addContent + '\n'  + cleanedData;
+
+    fs.writeFile(filePath, newData, "utf-8", (err) => {
         if(err) {
-            console.error("Error while writing file", err);
-            return;
+            console.error("Error while Writing", err);
         }
-        console.log("File Updated");
-    });
+        console.log("File Updated Sucessfully");
+    })
 });
 
 console.log("File Preprocessing Started");

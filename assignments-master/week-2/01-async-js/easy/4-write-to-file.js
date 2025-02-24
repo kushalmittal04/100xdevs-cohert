@@ -14,3 +14,19 @@ fs.writeFile("Files//a.txt", content, "utf-8", (err) => {
 });
 
 console.log("Writing to file is started..");
+
+
+
+let temp = new Promise ((resolve) => {
+    setTimeout((() => {
+        resolve("Hey it done");
+    }), 5*1000);
+});
+
+temp.then((res) => {
+    console.log(res);
+});
+
+
+
+

@@ -23,4 +23,14 @@ app.get('/errorCount', function(req, res) {
   res.status(200).json({ errorCount });
 });
 
+
+// Error Handling Middleware
+app.use(function (err, req, res, next) {
+  errorCount++; 
+  res.status(404).json({
+    msg: "Resource Not Found"
+  });
+});
+
+
 module.exports = app;

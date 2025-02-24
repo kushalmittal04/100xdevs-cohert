@@ -1,0 +1,40 @@
+<!--  Fetecching data from an API  -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>+-
+
+<body>
+  <script>
+    // Way 1: Using Promises 
+    function getAnimalData() {
+      fetch("https://fakerapi.it/api/v1/persons")
+        .then(function (response) {
+          response.json()
+            .then(function (finalData) {
+              console.log(finalData);
+            })
+        })
+        ;
+    }
+
+    // Way 2: Using Async/Await
+    async function getAnimalData() {
+      const response = await fetch("https://fakerapi.it/api/v1/persons");
+      const finalData = await response.json();
+      console.log(finalData);
+    }
+  </script>
+
+  <button onclick="getAnimalData()">Get Animal Data</button>
+
+  <!-- <script src="script.js"></script> -->
+</body>
+
+</html>
